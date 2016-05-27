@@ -136,7 +136,6 @@ PRODUCT_PACKAGES += \
 
 # AOSP Packages
 PRODUCT_PACKAGES += \
-    InCallUI \
     Launcher3
 
 PRODUCT_PACKAGES += \
@@ -228,10 +227,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
     audio.deep_buffer.media=1
 
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.video=1
-
 # Property to enable user to access Google WFD settings.
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1
@@ -264,12 +259,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.qualcomm.sns.daemon=0 \
     debug.qualcomm.sns.hal=0 \
     debug.qualcomm.sns.libsensor1=0
-
-# Power HAL Values
-PRODUCT_PROPERTY_OVERRIDES += \
-    rqbalance.low.balance_level=80 \
-    rqbalance.low.up_threshold=200 450 550 580 600 640 750 4294967295 \
-    rqbalance.low.down_threshold=0 120 320 400 440 500 550 700 \
-    rqbalance.normal.balance_level=40 \
-    rqbalance.normal.up_threshold=100 300 400 500 525 600 700 4294967295 \
-    rqbalance.normal.down_threshold=0 100 300 400 425 500 600 650
