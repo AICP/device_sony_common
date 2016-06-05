@@ -26,16 +26,6 @@
          Used to decide if the user can change the colors -->
     <bool name="config_multiColorBatteryLed">true</bool>
 
-    <!-- Global action menu -->
-    <string-array translatable="false" name="config_globalActionsList">
-        <item>power</item>
-        <item>reboot</item>
-        <item>airplane</item>
-        <item>screenshot</item>
-        <item>screenrecord</item>
-        <item>silent</item>
-    </string-array>
-
     <!-- Ambient Display -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
     <bool name="config_dozeAfterScreenOff">true</bool>
