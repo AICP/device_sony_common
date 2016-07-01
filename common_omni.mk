@@ -15,9 +15,9 @@
 # Include common
 include device/sony/common/common.mk
 
-# Snapdragon Camera
-PRODUCT_PACKAGES += \
-    SnapdragonCamera
+# Variant linking script
+PRODUCT_COPY_FILES += \
+    device/sony/common/releasetools/firmware.sh:utilities/firmware.sh
 
 # Recovery keycheck
 PRODUCT_PACKAGES += \

@@ -22,7 +22,7 @@
 // Constants: file paths
 #define BOOT_TXT "/boot.txt"
 #define EXEC_KEYCHECK "/sbin/keycheck"
-#define EXEC_TOYBOX "/sbin/toybox"
+#define EXEC_TOYBOX "/sbin/toybox_init"
 #define SBIN_CPIO_ANDROID "/sbin/ramdisk.cpio"
 #define SBIN_CPIO_RECOVERY "/sbin/ramdisk-recovery.cpio"
 
@@ -47,6 +47,9 @@ public:
 
     // Board: introduction for keycheck
     virtual void introduce_keycheck() { }
+
+    // Board: finalization of keycheck
+    virtual void finish_keycheck(bool __attribute__((unused)) recoveryBoot) { }
 
     // Board: introduction for Android
     virtual void introduce_android()

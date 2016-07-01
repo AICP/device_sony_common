@@ -37,25 +37,25 @@
 #ifndef DEV_BLOCK_FOTA_PATH
 #define DEV_BLOCK_FOTA_PATH DEV_BLOCK_PATH "p" STR(DEV_BLOCK_FOTA_NUM)
 #endif
-#ifndef DEV_INPUT_EVENTS
-#define DEV_INPUT_EVENTS "/dev/input/event%u"
-#endif
-#ifndef DEV_INPUT_MAJOR
-#define DEV_INPUT_MAJOR 13
-#endif
-#ifndef DEV_INPUT_MINOR_BASE
-#define DEV_INPUT_MINOR_BASE 64
-#endif
 
 // Constants: warmboot commands
 #ifndef WARMBOOT_CMDLINE
 #define WARMBOOT_CMDLINE "/proc/cmdline"
+#endif
+#ifndef WARMBOOT_CHARGER
+#define WARMBOOT_CHARGER "androidboot.mode=charger"
+#endif
+#ifndef WARMBOOT_MULTIROM
+#define WARMBOOT_MULTIROM "mrom_kexecd=1"
 #endif
 #ifndef WARMBOOT_RECOVERY
 #define WARMBOOT_RECOVERY "warmboot=0x77665502"
 #endif
 
 // Constants: init configurations
+#ifndef CHARGER_BYPASS
+#define CHARGER_BYPASS 1
+#endif
 #ifndef FOTA_RAMDISK_CHECK
 #define FOTA_RAMDISK_CHECK 1
 #endif

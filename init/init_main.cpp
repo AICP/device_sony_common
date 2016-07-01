@@ -29,9 +29,11 @@ int main(int argc, char** __attribute__((unused)) argv)
 {
     // Execution variables
     unsigned char i;
+    bool chargerBoot;
+    bool multiRomBoot;
     bool recoveryBoot;
     int keycheckStatus;
-    char buffer_events[20];
+    char buffer_event[20];
     init_board_device init_board;
 
     // Generate boot log
@@ -53,9 +55,8 @@ int main(int argc, char** __attribute__((unused)) argv)
             makedev(DEV_BLOCK_MAJOR, DEV_BLOCK_MINOR));
     for (i = 0; i <= 12; ++i)
     {
-        snprintf(buffer_events, sizeof(buffer_events), DEV_INPUT_EVENTS, i);
-        mknod(buffer_events, S_IFCHR | 0600,
-              makedev(DEV_INPUT_MAJOR, DEV_INPUT_MINOR_BASE + i));
+        snprintf(buffer_event, sizeof(buffer_event), "/dev/input/event%u", i);
+        mknod(buffer_event, S_IFCHR | 0600, makedev(13, 64 + i));
     }
     mknod("/dev/null", S_IFCHR | 0666, makedev(1, 3));
 
@@ -66,11 +67,14 @@ int main(int argc, char** __attribute__((unused)) argv)
     // Additional board inits
     init_board.start_init();
 
-    // Recovery boot detection
+    // Warmboots detection
+    chargerBoot = CHARGER_BYPASS &&
+            file_contains(WARMBOOT_CMDLINE, WARMBOOT_CHARGER);
+    multiRomBoot = file_contains(WARMBOOT_CMDLINE, WARMBOOT_MULTIROM);
     recoveryBoot = file_contains(WARMBOOT_CMDLINE, WARMBOOT_RECOVERY);
 
     // Keycheck introduction
-    if (!recoveryBoot)
+    if (!recoveryBoot && !multiRomBoot && !chargerBoot)
     {
 #if KEYCHECK_ENABLED
         // Listen for volume keys
@@ -84,7 +88,15 @@ int main(int argc, char** __attribute__((unused)) argv)
         keycheckStatus = system_exec_kill(keycheck_pid, KEYCHECK_TIMEOUT);
         recoveryBoot = (keycheckStatus == KEYCHECK_RECOVERY_BOOT_ONLY ||
                 keycheckStatus == KEYCHECK_RECOVERY_FOTA_BOOT);
+
+        // Board keycheck introduction
+        init_board.finish_keycheck(recoveryBoot);
 #endif
+    }
+    else if (multiRomBoot || chargerBoot)
+    {
+        // Direct boot to Android
+        recoveryBoot = false;
     }
     else
     {
@@ -142,6 +154,9 @@ int main(int argc, char** __attribute__((unused)) argv)
     init_board.finish_init();
     write_date(BOOT_TXT, true);
 
+    // Delete init toybox
+    unlink(EXEC_TOYBOX);
+
     // Unmount filesystems
     umount("/proc");
     umount("/sys");
@@ -152,9 +167,9 @@ int main(int argc, char** __attribute__((unused)) argv)
         // Unlink /dev/*
         dir_unlink_r("/dev", false);
 
-        // Launch ramdisk /init
+        // Launch ramdisk /init in the current process
         const char* argv_init[] = { "/init", nullptr };
-        system_exec(argv_init);
+        system_exec_inline(argv_init);
     }
 
     return 0;
