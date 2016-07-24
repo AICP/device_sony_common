@@ -29,3 +29,5 @@ def FullOTA_InstallEnd(info):
   info.script.AppendExtra(
         ('package_extract_file("firmware.sh", "/tmp/firmware.sh");\n'
          'set_metadata("/tmp/firmware.sh", "uid", 0, "gid", 0, "mode", 0755);'))
+
+  info.script.AppendExtra('assert(run_program("/tmp/firmware.sh") == 0);')
