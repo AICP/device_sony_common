@@ -45,7 +45,6 @@ check_mount() {
                 exit 1;
             fi
         else
-            umount -l "${2}";
             if ! mount -t "${3}" "${2}" "${MOUNT_POINT}" ; then
                 echo "Cannot mount ${1} (${MOUNT_POINT}).";
                 exit 1;
