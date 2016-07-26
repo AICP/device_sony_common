@@ -15,6 +15,9 @@
 # Include common
 include device/sony/common/common.mk
 
+# Use AOSP Browser
+TARGET_USES_AOSP_BROWSER := true
+
 # Variant linking script
 PRODUCT_COPY_FILES += \
     device/sony/common/releasetools/firmware.sh:utilities/firmware.sh
@@ -31,3 +34,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
     ro.product.model \
     ro.product.device
+
+# Omni custom config
+$(call inherit-product, vendor/omni/config/common.mk)
