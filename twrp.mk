@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Use TWRP on a CM ROM
+RECOVERY_VARIANT := twrp
+
 # TWRP UI
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_NO_SCREEN_BLANK := true
