@@ -13,11 +13,11 @@
 # limitations under the License.
 
 # Include common
-include device/sony/common/common.mk
+include device/sony/common-omni/common.mk
 
 # Variant linking script
 PRODUCT_COPY_FILES += \
-    device/sony/common/releasetools/firmware.sh:utilities/firmware.sh
+    device/sony/common-omni/releasetools/firmware.sh:utilities/firmware.sh
 
 # Recovery keycheck
 PRODUCT_PACKAGES += \

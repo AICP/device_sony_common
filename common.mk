@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PACKAGE_OVERLAYS += device/sony/common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/sony/common-omni/overlay
 
 # Common Specific Permissions
 PRODUCT_COPY_FILES += \
@@ -46,22 +46,22 @@ PRODUCT_COPY_FILES += \
 
 # Common init
 PRODUCT_COPY_FILES += \
-    device/sony/common/rootdir/init.common.rc:root/init.common.rc \
-    device/sony/common/rootdir/init.common.usb.rc:root/init.common.usb.rc
+    device/sony/common-omni/rootdir/init.common.rc:root/init.common.rc \
+    device/sony/common-omni/rootdir/init.common.usb.rc:root/init.common.usb.rc
 
 # Common etc
 PRODUCT_COPY_FILES += \
-    device/sony/common/rootdir/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/sony/common/rootdir/system/etc/gps.conf:system/etc/gps.conf \
-    device/sony/common/rootdir/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    device/sony/common/rootdir/system/etc/sec_config:system/etc/sec_config \
-    device/sony/common/rootdir/system/etc/sensors/sensors_settings:system/etc/sensors/sensors_settings
+    device/sony/common-omni/rootdir/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/sony/common-omni/rootdir/system/etc/gps.conf:system/etc/gps.conf \
+    device/sony/common-omni/rootdir/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
+    device/sony/common-omni/rootdir/system/etc/sec_config:system/etc/sec_config \
+    device/sony/common-omni/rootdir/system/etc/sensors/sensors_settings:system/etc/sensors/sensors_settings
 
 # QMI
 PRODUCT_COPY_FILES += \
-    device/sony/common/rootdir/system/etc/data/dsi_config.xml:system/etc/data/dsi_config.xml \
-    device/sony/common/rootdir/system/etc/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
-    device/sony/common/rootdir/system/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml
+    device/sony/common-omni/rootdir/system/etc/data/dsi_config.xml:system/etc/data/dsi_config.xml \
+    device/sony/common-omni/rootdir/system/etc/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
+    device/sony/common-omni/rootdir/system/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml
 
 # Audio
 PRODUCT_PACKAGES += \
