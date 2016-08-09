@@ -13,8 +13,8 @@
 # limitations under the License.
 
 # Common config
-include device/sony/common-omni/CommonConfig.mk
-include device/sony/common-omni/twrp.mk
+include device/sony/common/CommonConfig.mk
+include device/sony/common/twrp.mk
 
 # Sony AOSP Project
 SONY_AOSP ?= true
@@ -24,14 +24,14 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common-omni/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
 
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 
 # Custom bootimage
 BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/common-omni/boot/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg.mk
 
 # DSP Manager
 TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
