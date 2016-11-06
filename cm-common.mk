@@ -28,3 +28,6 @@ PRODUCT_PACKAGES += \
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
+
+# TWRP
+include device/sony/common/twrp.mk
