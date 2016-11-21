@@ -28,7 +28,3 @@ PRODUCT_PACKAGES += \
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
-
-# Display HAL
-SONY_AOSP_DISPLAY := true
-$(call project-set-path,qcom-display,hardware/sony/display/msm8994)
