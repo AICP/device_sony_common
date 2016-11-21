@@ -31,4 +31,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display HAL
 SONY_AOSP_DISPLAY := true
-$(call project-set-path,qcom-display,hardware/sony/display)
+$(call project-set-path,qcom-display,hardware/sony/display/msm8994)
