@@ -57,6 +57,9 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# Set seccomp policy for media server
+BOARD_SECCOMP_POLICY += device/sony/common/seccomp
+
 BUILD_KERNEL := true
 -include device/sony/common-headers/KernelHeaders.mk
 -include device/sony/common-kernel/KernelConfig.mk
