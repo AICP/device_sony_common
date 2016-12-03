@@ -50,10 +50,10 @@
 
     <!-- Does the notification LED support multiple colors?
          Used to decide if the user can change the colors -->
-    <bool name="config_multiColorNotificationLed">true</bool>
+    <!--bool name="config_multiColorNotificationLed">true</bool-->
 
     <!-- Can we change the battery color? -->
-    <bool name="config_multiColorBatteryLed">true</bool>
+    <!--bool name="config_multiColorBatteryLed">true</bool-->
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
