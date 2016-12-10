@@ -63,6 +63,9 @@ EXTENDED_FONT_FOOTPRINT := true
 # Set seccomp policy for media server
 BOARD_SECCOMP_POLICY += $(COMMON_PATH)/seccomp
 
+# Init configuration for init_sony
+include $(COMMON_PATH)/init/config.mk
+
 BUILD_KERNEL := true
 -include device/sony/common-headers/KernelHeaders.mk
 -include device/sony/common-kernel/KernelConfig.mk
