@@ -280,3 +280,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.qualcomm.sns.daemon=0 \
     debug.qualcomm.sns.hal=0 \
     debug.qualcomm.sns.libsensor1=0
+
+# sdcardFS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
