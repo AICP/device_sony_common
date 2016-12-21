@@ -34,9 +34,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
 
 ifneq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=0
+    persist.camera.HAL3.enabled=0 \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
 else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1
 endif
+
+# SELinux
+BOARD_SEPOLICY_DIRS += device/sony/common/sepolicy

@@ -1,0 +1,1 @@
+allow mm-qcamerad mediaserver:fd use;
