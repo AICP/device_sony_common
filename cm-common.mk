@@ -32,3 +32,11 @@ PRODUCT_PACKAGES += \
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
+
+ifneq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=0
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=1
+endif
