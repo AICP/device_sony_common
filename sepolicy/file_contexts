@@ -2,6 +2,8 @@
 # Dev nodes
 #
 /dev/pn54x                                      u:object_r:nfc_device:s0
+/dev/brcm_bt_drv                                u:object_r:hci_attach_dev:s0
+/dev/tfa98xx                                    u:object_r:audio_device:s0
 
 ###################################
 # Dev block nodes
@@ -25,6 +27,10 @@
 # System files
 #
 /system/bin/macaddrsetup                        u:object_r:addrsetup_exec:s0
+/system/bin/timekeep                            u:object_r:timekeep_exec:s0
+/system/bin/brcm-uim-sysfs                      u:object_r:brcm_uim_exec:s0
+/system/bin/thermanager                         u:object_r:thermanager_exec:s0
+/system/bin/tfa9890_amp                         u:object_r:tfa_amp_exec:s0
 /system/vendor/bin/irsc_util                    u:object_r:irsc_util_exec:s0
 /system/vendor/bin/mlog_qmi_service             u:object_r:mlog_qmi_exec:s0
 /system/vendor/bin/mpdecision                   u:object_r:mpdecision_exec:s0
@@ -43,7 +49,16 @@
 ###################################
 # sysfs files
 #
-/sys/devices/soc/fb000000\.qcom,wcnss-wlan/wcnss_mac_addr                                u:object_r:sysfs_addrsetup:s0
+/sys/devices(/soc\.0)?/fb000000\.qcom,wcnss-wlan/wcnss_mac_addr             u:object_r:sysfs_addrsetup:s0
+/sys/devices/platform/bcmdhd_wlan/macaddr                                   u:object_r:sysfs_addrsetup:s0
+/sys/devices(/soc\.0)?/00-qcom,pm(8941|8950|8994)_rtc/rtc/rtc0/since_epoch  u:object_r:sysfs_timekeep:s0
+/sys/devices/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpuclk                   u:object_r:sysfs_thermal:s0
+/sys/devices/fdb00000\.qcom,kgsl-3d0/kgsl/kgsl-3d0/reset_count              u:object_r:sysfs_thermal:s0
+/sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc.93(/.*)?                    u:object_r:brcm_ldisc_sysfs:s0
+/sys/devices(/soc\.0)?/bluesleep\.(81|89)/rfkill/rfkill0/state              u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices(/soc\.0)?/bcm43xx.([0-9])+/rfkill/rfkill[0-9](/.*)?            u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/system/cpu.*/cpufreq/stats(/.*)?                               u:object_r:sysfs_devices_system_cpu:s0
+/sys/devices/msm_dwc3/power_supply/usb/current_max                          u:object_r:sysfs_usb_supply:s0
 
 ###################################
 # proc files
