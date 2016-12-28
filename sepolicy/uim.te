@@ -1,0 +1,11 @@
+type uim, domain, domain_deprecated;
+
+allow uim brcm_uim_exec:file { entrypoint getattr read execute };
+allow uim hci_attach_dev:chr_file { read write ioctl open };
+allow uim self:capability { net_admin dac_override };
+allow uim rootfs:lnk_file getattr;
+allow uim brcm_ldisc_sysfs:lnk_file read;
+allow uim serial_device:chr_file rw_file_perms;
+allow uim sysfs_bluetooth_writable:dir r_dir_perms;
+allow uim sysfs_bluetooth_writable:file rw_file_perms;
+allow uim { sysfs bluetooth_data_file }:file rw_file_perms;
