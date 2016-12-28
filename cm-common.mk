@@ -24,6 +24,10 @@ USE_DEVICE_SPECIFIC_DATASERVICES := true
 # CM Hardware
 BOARD_HARDWARE_CLASS += device/sony/common/cmhw
 
+# Sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/sony/common/sepolicy
+
 # CM Packages
 PRODUCT_PACKAGES += \
     Snap \
