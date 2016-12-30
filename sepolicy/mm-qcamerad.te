@@ -1,0 +1,2 @@
+# HAL1 cam hack
+allow mm-qcamerad graphics_device:dir search;
