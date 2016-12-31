@@ -277,17 +277,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.zsl.mode=1 \
     persist.camera.time.monotonic=0
 
-ifeq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/system/etc/sec_config:system/etc/sec_config
-endif
-
 ifneq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=0
 else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1
+endif
+
+ifeq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/etc/sec_config:system/etc/sec_config
 endif
 
 # Sensors debug
