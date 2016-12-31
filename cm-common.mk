@@ -21,9 +21,6 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 DEVICE_SPECIFIC_DATASERVICES := hardware/sony/dataservices
 USE_DEVICE_SPECIFIC_DATASERVICES := true
 
-# CM Hardware
-BOARD_HARDWARE_CLASS += device/sony/common/cmhw
-
 # CM Packages
 PRODUCT_PACKAGES += \
     Snap \
