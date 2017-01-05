@@ -28,3 +28,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_RELATIVE_PATH := hw
 
 include $(BUILD_SHARED_LIBRARY)
+
+ifneq ($(TARGET_VENDOR_DEVICE_NAME),)
+    $(shell mkdir -p $(TARGET_OUT_SHARED_LIBRARIES)/hw && pushd $(TARGET_OUT_SHARED_LIBRARIES)/hw > /dev/null && ln -s power.$(TARGET_DEVICE).so power.$(TARGET_VENDOR_DEVICE_NAME).so && popd > /dev/null)
+endif
