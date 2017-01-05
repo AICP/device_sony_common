@@ -76,5 +76,5 @@ BUILD_KERNEL := true
 -include vendor/qcom/proprietary/common/build/proprietary-build.mk
 
 # SELinux
-include device/sony/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/sony/common/sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+-include device/sony/sepolicy/sepolicy.mk
