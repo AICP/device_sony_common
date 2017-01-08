@@ -81,4 +81,8 @@ MASTER_SIDE_CP_TARGET_LIST := msm8996
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
+ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
+  include $(call all-makefiles-under,hardware/qcom/wlan/qcwcn)
+endif
+
 endif
