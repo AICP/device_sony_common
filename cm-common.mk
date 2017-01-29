@@ -31,3 +31,6 @@ PRODUCT_PACKAGES += \
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
+
+# GPS
+$(call project-set-path,qcom-gps,hardware/sony/gps/msm8994)
