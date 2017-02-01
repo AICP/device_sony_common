@@ -15,11 +15,6 @@
     "branch":       "AICP-n7.1-sonycm"
   },
   {
-    "repository":   "SpiritCroc/android_hardware_sony_gps",
-    "target_path":  "hardware/sony/gps",
-    "branch":       "AICP-n7.1-sony"
-  },
-  {
     "repository":   "sonyxperiadev/vendor-qcom-opensource-dataservices",
     "target_path":  "hardware/sony/dataservices",
     "branch":       "master"
