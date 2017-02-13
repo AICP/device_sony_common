@@ -23,7 +23,13 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 DEVICE_SPECIFIC_DATASERVICES := hardware/sony/dataservices
 USE_DEVICE_SPECIFIC_DATASERVICES := true
 
-# CM Packages
+# Healthd
+BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
+RED_LED_PATH := "/sys/class/leds/led:rgb_red/brightness"
+GREEN_LED_PATH := "/sys/class/leds/led:rgb_green/brightness"
+BLUE_LED_PATH := "/sys/class/leds/led:rgb_blue/brightness"
+
+# Lineage Packages
 PRODUCT_PACKAGES += \
     Snap \
     Gello
