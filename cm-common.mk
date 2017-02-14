@@ -23,6 +23,9 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 DEVICE_SPECIFIC_DATASERVICES := hardware/sony/dataservices
 USE_DEVICE_SPECIFIC_DATASERVICES := true
 
+# FM
+TARGET_PROVIDES_FMRADIO_JNI := true
+
 # Healthd
 BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
 RED_LED_PATH := "/sys/class/leds/led:rgb_red/brightness"
