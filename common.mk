@@ -303,11 +303,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1
 endif
 
-ifeq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/system/etc/sec_config:system/etc/sec_config
-endif
-
 # Sensors debug
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.sensors.hal=0 \
