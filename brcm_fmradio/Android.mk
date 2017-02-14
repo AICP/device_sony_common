@@ -1,4 +1,4 @@
-ifeq ($(BOARD_HAVE_BCM_FM), true)
+ifeq ($(BOARD_USE_BCM_FM), true)
 
 LOCAL_PATH := $(call my-dir)
 
