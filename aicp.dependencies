@@ -25,6 +25,11 @@
     "branch":       "master"
   },
   {
+    "repository":   "sonyxperiadev/vendor-qcom-opensource-location",
+    "target_path":  "hardware/sony/location",
+    "branch":       "master"
+  },
+  {
     "repository":   "sonyxperiadev/thermanager",
     "target_path":  "hardware/sony/thermanager",
     "branch":       "master"
