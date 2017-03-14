@@ -14,6 +14,8 @@
 
 BOARD_VENDOR := sony
 
+BOARD_USE_ENFORCING_SELINUX := true
+
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 DEVICE_SPECIFIC_CAMERA_PATH := hardware/sony/camera
