@@ -45,11 +45,6 @@
     "branch":       "master"
   },
   {
-    "repository":   "sonyxperiadev/packages_apps_ExtendedSettings",
-    "target_path":  "packages/apps/ExtendedSettings",
-    "branch":       "master"
-  },
-  {
     "repository":   "SatyrBen/vendor-sony",
     "target_path":  "vendor/sony",
     "branch":       "android-6.0.1"
