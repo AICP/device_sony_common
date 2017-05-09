@@ -26,7 +26,7 @@ ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
     LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
 endif
 
-LOCAL_SRC_FILES := power.c
+LOCAL_SRC_FILES := power.c rqbalance_halext.c
 LOCAL_SHARED_LIBRARIES := liblog libcutils
 LOCAL_MODULE := power.$(LOCAL_TARGET_DEVICE)
 LOCAL_MODULE_TAGS := optional
