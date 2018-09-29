@@ -112,6 +112,9 @@ on late-fs
     wait_for_prop hwservicemanager.ready true
 
 
+    # enable ril-daemon manually since it is disabled by default
+    enable ril-daemon
+
 on post-fs-data
     # We can start netd here before in is launched in common init.rc on zygote-start
     start netd
