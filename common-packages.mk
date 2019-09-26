@@ -150,3 +150,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files \
     fs_config_dirs
+
+# Default thermal hw module:
+PRODUCT_PACKAGES += \
+    thermal.default
