@@ -19,7 +19,7 @@ COMMON_PATH := device/sony/common
 SONY_AOSP ?= true
 
 # Common kernel source
-TARGET_KERNEL_SOURCE := kernel/sony/msm
+TARGET_KERNEL_SOURCE := kernel/sony/msm-4.14/kernel
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # SELinux
