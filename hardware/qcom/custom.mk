@@ -9,16 +9,18 @@ MSM_VIDC_TARGET_LIST := msm8952 msm8996 msm8998 sdm660 sdm845
 #List of targets that use master side content protection
 MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998 sdm660 sdm845
 
-audio-hal := hardware/sony/audio
-gps-hal := hardware/sony/gps/sdm845
-display-hal := hardware/sony/display-sde
+SONY_QCOM_HAL_ROOT := hardware/sony/qcom
+
+audio-hal := $(SONY_QCOM_HAL_ROOT)/audio
+gps-hal := $(SONY_QCOM_HAL_ROOT)/gps/sdm845
+display-hal := $(SONY_QCOM_HAL_ROOT)/display
 
 ifeq ($(TARGET_BOARD_PLATFORM),sdm845)
-QCOM_MEDIA_ROOT := hardware/sony/media/sdm845
+QCOM_MEDIA_ROOT := $(SONY_QCOM_HAL_ROOT)/media/sdm845
 else
 # ipa-hal is already included by default for sdm845
 ipa-hal := hardware/qcom/sdm845/data/ipacfg-mgr
-QCOM_MEDIA_ROOT := hardware/sony/media/msm8998
+QCOM_MEDIA_ROOT := $(SONY_QCOM_HAL_ROOT)/media/msm8998
 endif
 
 OMX_VIDEO_PATH := mm-video-v4l2
