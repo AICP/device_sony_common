@@ -3,6 +3,8 @@ ifneq ($(AICP_BUILD),)
 # TARGET_BOARD_PLATFORM specific featurization
 QCOM_BOARD_PLATFORMS += msm8952 msm8996 msm8998 sdm660 sdm845
 
+QCOM_NEW_MEDIA_PLATFORM := msm8952 msm8996 msm8998 sdm660 sdm845 sm8150
+
 #List of targets that use video hw
 MSM_VIDC_TARGET_LIST := msm8952 msm8996 msm8998 sdm660 sdm845
 
@@ -15,11 +17,9 @@ audio-hal := $(SONY_QCOM_HAL_ROOT)/audio
 gps-hal := $(SONY_QCOM_HAL_ROOT)/gps/sdm845
 display-hal := $(SONY_QCOM_HAL_ROOT)/display
 
-ifeq ($(TARGET_BOARD_PLATFORM),sdm845)
-QCOM_MEDIA_ROOT := $(SONY_QCOM_HAL_ROOT)/media/sdm845
+ifneq ($(filter $(QCOM_NEW_MEDIA_PLATFORM), $(TARGET_BOARD_PLATFORM)),)
+QCOM_MEDIA_ROOT := $(SONY_QCOM_HAL_ROOT)/media/sm8150
 else
-# ipa-hal is already included by default for sdm845
-ipa-hal := hardware/qcom/sdm845/data/ipacfg-mgr
 QCOM_MEDIA_ROOT := $(SONY_QCOM_HAL_ROOT)/media/msm8998
 endif
 
