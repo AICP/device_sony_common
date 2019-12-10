@@ -11,7 +11,7 @@ MSM_VIDC_TARGET_LIST := msm8952 msm8996 msm8998 sdm660 sdm845
 #List of targets that use master side content protection
 MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998 sdm660 sdm845
 
-SONY_QCOM_HAL_ROOT := hardware/sony/qcom
+SONY_QCOM_HAL_ROOT := hardware/sony/qcom-$(SOMC_KERNEL_VERSION)
 
 audio-hal := $(SONY_QCOM_HAL_ROOT)/audio
 gps-hal := $(SONY_QCOM_HAL_ROOT)/gps/sdm845
