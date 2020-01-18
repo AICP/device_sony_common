@@ -1,5 +1,5 @@
 # Vendor version
-TARGET_VENDOR_VERSION := v1
+TARGET_VENDOR_VERSION := v3
 
 ifneq (,$(SONY_BUILD_ODM))
 
@@ -119,6 +119,45 @@ PRODUCT_PACKAGES += \
     qmuxd \
     qrtr-ns
 
+# IMS
+PRODUCT_PACKAGES += \
+    imsdatadaemon \
+    imsqmidaemon \
+    imsrcsd \
+    ims_rtp_daemon \
+    libcneapiclient \
+    libcne \
+    lib-dplmedia \
+    lib-imscmservice \
+    lib-imsdpl \
+    lib-imsqimf \
+    lib-imsrcsbaseimpl \
+    lib-imsrcs-v2 \
+    lib-imsvtextutils \
+    lib-imsvt \
+    lib-imsvtutils \
+    lib-imsxml \
+    lib-rtpcommon \
+    lib-rtpcore \
+    lib-rtpdaemoninterface \
+    lib-rtpsl \
+    lib-siputility \
+    lib-uceservice \
+    com.qualcomm.qti.uceservice@2.0 \
+    com.qualcomm.qti.imscmservice@1.0 \
+    com.qualcomm.qti.imscmservice@2.0 \
+    com.qualcomm.qti.imscmservice@2.1 \
+    vendor.qti.data.factory@1.1 \
+    vendor.qti.hardware.data.connection@1.0 \
+    vendor.qti.hardware.data.dynamicdds@1.0 \
+    vendor.qti.hardware.data.qmi@1.0 \
+    vendor.qti.hardware.radio.ims@1.0 \
+    vendor.qti.ims.callinfo@1.0 \
+    vendor.qti.ims.rcsconfig@1.0 \
+    vendor.qti.imsrtpservice@1.0-service-Impl \
+    vendor.qti.imsrtpservice@1.0 \
+    vendor.qti.latency@2.0
+
 ifneq ($(TARGET_LEGACY_KEYMASTER),true)
 ifneq ($(TARGET_KEYMASTER_V4),true)
 # Keymaster
@@ -153,10 +192,6 @@ PRODUCT_PACKAGES += \
     libqomx_jpegenc_pipe \
     libqomx_jpegenc \
 
-# Camera Override
-PRODUCT_PACKAGES += \
-    libcom.qti.chinodeutils \
-    com.qti.chi.override
 
 # Camera Framework
 PRODUCT_PACKAGES += \
@@ -444,8 +479,18 @@ PRODUCT_PACKAGES += \
     com.qti.chi.override \
     com.qti.node.eisv2 \
     com.qti.node.eisv3 \
+    com.qti.node.swregistration \
+    com.qti.camx.chiiqutils \
+    com.qti.node.memcpy \
+    com.qti.hvx.binning \
+    com.qti.hvx.addconstant \
+    com.qti.node.gpu \
+    com.qti.node.remosaic \
+    com.qti.node.stitch \
+    com.qti.node.depth \
     camera.sdm845 \
     camera.sm8150
+
 
 # Common
 PRODUCT_PACKAGES += \
@@ -463,6 +508,9 @@ PRODUCT_PACKAGES += \
     com.sony.eeprom.blakiston \
     com.sony.eeprom.pansy \
     com.sony.eeprom.poodle \
+    com.sony.sensor.imx400 \
+    com.sony.sensor.imx241 \
+    com.sony.sensor.imx258 \
     com.sony.tuned.imx400 \
     com.sony.tuned.imx241 \
     com.sony.tuned.imx258
@@ -478,6 +526,10 @@ PRODUCT_PACKAGES += \
     com.sony.eeprom.milvus_sub \
     com.sony.eeprom.rose_otp \
     com.sony.eeprom.goby_otp \
+    com.sony.sensor.imx445 \
+    com.sony.sensor.s5k3m3sn \
+    com.sony.sensor.imx563 \
+    com.sony.sensor.s5k4h7 \
     com.sony.tuned.imx445 \
     com.sony.tuned.imx563 \
     com.sony.tuned.s5k3m3 \
