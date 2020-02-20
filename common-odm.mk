@@ -1,5 +1,5 @@
 # Vendor version
-TARGET_VENDOR_VERSION := v3
+TARGET_VENDOR_VERSION := v4
 
 ifneq (,$(SONY_BUILD_ODM))
 
@@ -84,6 +84,7 @@ PRODUCT_PACKAGES += \
 
 # Data
 PRODUCT_PACKAGES += \
+    libqcmaputils \
     libconfigdb \
     libdiag \
     libdsi_netctrl \
@@ -92,6 +93,8 @@ PRODUCT_PACKAGES += \
     liblqe \
     libqdi \
     libqdp \
+    adpl\
+    qdi \
     netmgrd
 
 PRODUCT_PACKAGES += \
@@ -527,6 +530,7 @@ PRODUCT_PACKAGES += \
     com.sony.eeprom.rose_otp \
     com.sony.eeprom.goby_otp \
     com.sony.sensor.imx445 \
+    com.sony.sensor.s5k3m3 \
     com.sony.sensor.s5k3m3sn \
     com.sony.sensor.imx563 \
     com.sony.sensor.s5k4h7 \

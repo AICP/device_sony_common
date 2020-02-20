@@ -202,6 +202,38 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := adpl.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES := vendor/etc/init/adpl.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := qti.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES := vendor/etc/init/qti.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := dpmQmiMgr.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES := vendor/etc/init/dpmQmiMgr.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := dpm.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES := vendor/etc/init/dpmd.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := qseecom.rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES := vendor/etc/init/qseecom.rc
@@ -241,6 +273,15 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
 include $(BUILD_PREBUILT)
 
+ifeq ($(TARGET_USES_TAD_V2), true)
+include $(CLEAR_VARS)
+LOCAL_MODULE := tad.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES := vendor/etc/init/tad2.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
+include $(BUILD_PREBUILT)
+else
 include $(CLEAR_VARS)
 LOCAL_MODULE := tad.rc
 LOCAL_MODULE_CLASS := ETC
@@ -248,6 +289,7 @@ LOCAL_SRC_FILES := vendor/etc/init/tad.rc
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := ta_qmi.rc
