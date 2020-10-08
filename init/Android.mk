@@ -27,13 +27,13 @@ LOCAL_SRC_FILES := \
     ../extract_ramdisk/uncompress.cpp \
     ../extract_ramdisk/extract_ramdisk.cpp
 
-LOCAL_C_INCLUDES := \
-    ../extract_ramdisk
+#LOCAL_C_INCLUDES := \
+#    ../extract_ramdisk
 
-ifneq ($(BOARD_SONY_INIT_INCLUDE),)
-LOCAL_C_INCLUDES += \
-    $(BOARD_SONY_INIT_INCLUDE)
-endif
+#ifneq ($(BOARD_SONY_INIT_INCLUDE),)
+#LOCAL_C_INCLUDES += \
+#    $(BOARD_SONY_INIT_INCLUDE)
+#endif
 
 LOCAL_CPPFLAGS := \
     -Wall \
