@@ -24,11 +24,11 @@ LOCAL_SRC_FILES := \
     init_io.cpp \
     init_main.cpp \
     init_ramdisk.cpp \
-    ../extract_ramdisk/uncompress.cpp \
-    ../extract_ramdisk/extract_ramdisk.cpp
+    $(LOCAL_PATH)/../extract_ramdisk/uncompress.cpp \
+    $(LOCAL_PATH)/../extract_ramdisk/extract_ramdisk.cpp
 
 LOCAL_C_INCLUDES := \
-    ../extract_ramdisk
+    $(LOCAL_PATH)/../extract_ramdisk
 
 ifneq ($(BOARD_SONY_INIT_INCLUDE),)
 LOCAL_C_INCLUDES += \
